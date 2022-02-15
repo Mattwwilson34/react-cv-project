@@ -14,6 +14,9 @@ export default class MainDisplay extends Component {
       this.props.displayValues;
     return (
       <div className='Main-Display'>
+        <button onClick={this.props.toggleInputs}>
+          {this.props.buttonText}
+        </button>
         <PersonalInfoDisplay displayValues={personalInfo} />
         <hr className='Edu-Top-hr'></hr>
         <div className='Edu-Header'>EDUCATION</div>

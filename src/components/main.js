@@ -8,6 +8,9 @@ class Main extends Component {
     super(props);
 
     this.state = {
+      mainClassName: 'Main',
+      showInputs: true,
+      buttonText: 'Preview',
       personalInfo: {
         firstName: 'Matt',
         lastName: 'Wilson',
@@ -46,6 +49,7 @@ class Main extends Component {
       ],
     };
 
+    this.toggleInputs = this.toggleInputs.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.updateEducation = this.updateEducation.bind(this);
     this.addEducation = this.addEducation.bind(this);
@@ -54,6 +58,20 @@ class Main extends Component {
     this.addExperience = this.addExperience.bind(this);
     this.deleteExperience = this.deleteExperience.bind(this);
   }
+
+  toggleInputs = () => {
+    this.setState({ showInputs: !this.state.showInputs });
+    if (this.state.buttonText === 'Edit') {
+      this.setState({ buttonText: 'Preview' });
+    } else {
+      this.setState({ buttonText: 'Edit' });
+    }
+    if (this.state.mainClassName === '') {
+      this.setState({ mainClassName: 'Main' });
+    } else {
+      this.setState({ mainClassName: '' });
+    }
+  };
 
   handleChange(e) {
     const parentID = e.target.parentElement.dataset.id;
@@ -153,19 +171,27 @@ class Main extends Component {
   }
 
   render() {
+    const { showInputs } = this.state;
     return (
-      <div className='Main'>
-        <Form
-          handleChange={this.handleChange}
-          inputValues={this.state}
-          updateEducation={this.updateEducation}
-          addEducation={this.addEducation}
-          deleteEducation={this.deleteEducation}
-          updateExperience={this.updateExperience}
-          addExperience={this.addExperience}
-          deleteExperience={this.deleteExperience}
+      <div className={this.state.mainClassName}>
+        {showInputs ? (
+          <Form
+            handleChange={this.handleChange}
+            inputValues={this.state}
+            updateEducation={this.updateEducation}
+            addEducation={this.addEducation}
+            deleteEducation={this.deleteEducation}
+            updateExperience={this.updateExperience}
+            addExperience={this.addExperience}
+            deleteExperience={this.deleteExperience}
+          />
+        ) : null}
+
+        <MainDisplay
+          displayValues={this.state}
+          toggleInputs={this.toggleInputs}
+          buttonText={this.state.buttonText}
         />
-        <MainDisplay displayValues={this.state} />
       </div>
     );
   }

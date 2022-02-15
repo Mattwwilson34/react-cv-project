@@ -7,16 +7,9 @@ class PersonalInfo extends Component {
     this.state = {};
   }
   render() {
-    const {
-      handleChange,
-      firstName,
-      lastName,
-      title,
-      address,
-      email,
-      phone,
-      description,
-    } = this.props;
+    const { handleChange } = this.props;
+    const { firstName, lastName, title, address, email, phone, description } =
+      this.props.personalInfo;
 
     return (
       <form data-id='personalInfo'>
