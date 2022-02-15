@@ -56,12 +56,12 @@ class PersonalInfo extends Component {
           type='text'
           onChange={handleChange}
           placeholder='Phone'></input>
-        <input
+        <textarea
           value={description}
           data-id='description'
           type='text'
           onChange={handleChange}
-          placeholder='Description'></input>
+          placeholder='Description'></textarea>
       </form>
     );
   }

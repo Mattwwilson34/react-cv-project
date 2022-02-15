@@ -11,12 +11,30 @@ body {
 
 .Main {
   display: grid;
-  grid-template-columns: [input] 1fr [output] 1fr;
+  grid-template-columns: [input] 1fr [output] 1.5fr;
+  align-items: start;
+  justify-items: center;
+  margin: 0 20px;
+  column-gap: 20px;
+}
+
+.Main-Display {
+  padding: 10px;
+  min-width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 25px;
+  background-color: aliceblue;
+  border-radius: 10px;
 }
 
 .Form {
+  margin-top: 20px;
   padding: 20px;
-  background-color: silver;
+  max-width: 500px;
+  background-color: rgb(218, 216, 216);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .Form input {
@@ -43,9 +61,53 @@ body {
 }
 
 .Add-Button {
-  background-color: #0d6efd;
+  margin: 10px 0;
+  background-color: #79aeff;
 }
 
 .Delete-Button {
-  background-color: #dc3545;
+  margin: 10px 0;
+  background-color: #f57784;
+}
+
+.Form-PersonalInfo-Header,
+.Form-Education-Header,
+.Form-Experience-Header {
+  font-size: 26px;
+  margin: 0;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.Edu-Top-hr {
+  height: 3.5px;
+  background-color: black;
+  margin-bottom: 3px;
+}
+
+.Edu-Bottom-hr {
+  margin-top: 0;
+}
+
+.Edu-Header {
+  font-weight: bold;
+  margin: 0;
+}
+
+.Exp-Top-hr {
+  height: 3.5px;
+  background-color: black;
+  margin-bottom: 3px;
+}
+.Exp-Header {
+  font-weight: bold;
+  margin: 0;
+}
+.Exp-Bottom-hr {
+  margin-top: 0;
 }

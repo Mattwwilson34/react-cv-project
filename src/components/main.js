@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './form/form';
+import MainDisplay from './display/main-display';
 import uniqid from 'uniqid';
 
 class Main extends Component {
@@ -8,31 +9,39 @@ class Main extends Component {
 
     this.state = {
       personalInfo: {
-        firstName: '',
-        lastName: '',
-        title: '',
-        address: '',
-        email: '',
-        phone: '',
+        firstName: 'Matt',
+        lastName: 'Wilson',
+        title: 'Physical Therapist',
+        address: '2532 Ross Road Durham, NC 27703',
+        email: 'mattwwilson34@gmail.com',
+        phone: '(267)-566-5793',
         description: '',
       },
       educationArray: [
         {
           id: uniqid(),
-          degree: '',
-          school: '',
-          location: '',
-          dateCompleted: '',
+          degree: 'Doctor of Physical Therapy',
+          school: 'Duke University',
+          location: '(Durham, North Carolina)',
+          dateCompleted: 'May 2021',
+        },
+        {
+          id: uniqid(),
+          degree: 'Bachelors of Science',
+          school: 'Temple University',
+          location: '(Philadelphia, Pennsylvania)',
+          dateCompleted: 'December 2014',
         },
       ],
       experienceArray: [
         {
           id: uniqid(),
-          position: '',
-          company: '',
-          city: '',
-          from: '',
-          to: '',
+          position: 'PT',
+          company: 'PIVOT Physical Therapy',
+          city: 'Wake Forest',
+          from: 'Sept 2021',
+          to: 'Aug 2022',
+          description: '',
         },
       ],
     };
@@ -56,7 +65,6 @@ class Main extends Component {
         [elementID]: e.target.value,
       },
     });
-    console.log(this.state.personalInfo);
   }
 
   updateEducation(e) {
@@ -157,6 +165,7 @@ class Main extends Component {
           addExperience={this.addExperience}
           deleteExperience={this.deleteExperience}
         />
+        <MainDisplay displayValues={this.state} />
       </div>
     );
   }

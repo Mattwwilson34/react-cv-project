@@ -26,11 +26,11 @@ class Form extends Component {
 
     return (
       <div className='Form'>
-        <p>Personal Information</p>
+        <p className='Form-PersonalInfo-Header'>Personal Information</p>
         <PersonalInfo handleChange={handleChange} personalInfo={personalInfo} />
         <hr></hr>
         <div>
-          <p>Education</p>
+          <p className='Form-Education-Header'>Education</p>
           {educationArray.map((edu) => {
             return (
               <div key={edu.id}>
@@ -54,7 +54,7 @@ class Form extends Component {
         </div>
         <div>
           <hr></hr>
-          <p>Experience</p>
+          <p className='Form-Experience-Header'>Experience</p>
           {experienceArray.map((exp) => {
             return (
               <div key={exp.id}>

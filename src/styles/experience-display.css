@@ -1,0 +1,32 @@
+.Experience-Container {
+  display: grid;
+  grid-template-columns: [left] 3fr [right] 1fr;
+  margin-bottom: 5px;
+}
+
+.Company {
+  font-weight: bold;
+}
+
+.Exp-City {
+  font-style: italic;
+}
+
+.Exp-City:before {
+  content: '(';
+}
+.Exp-City:after {
+  content: ')';
+}
+
+.Exp-Right-Container {
+  text-align: right;
+}
+
+.Exp-From {
+  font-style: italic;
+}
+
+.Exp-To {
+  font-style: italic;
+}

@@ -1,0 +1,57 @@
+.Personal-Info-Container {
+  display: grid;
+  grid-template-columns: [left] 1fr [center] 1fr [right] 1fr;
+  grid-template-rows: [first] 75px [second] 35px [third] auto;
+}
+
+.Header-Container {
+  text-align: center;
+  grid-column-start: left;
+  grid-column-end: span 3;
+  grid-row-start: first;
+}
+
+.First-Name {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.Title {
+  display: block;
+}
+
+.Address,
+.Email,
+.Phone {
+  font-size: 14px;
+}
+.Address {
+  grid-column-start: left;
+  grid-column-end: span 2;
+  grid-row-start: second;
+}
+.Email {
+  text-align: right;
+
+  margin-top: 16px;
+  grid-column-start: right;
+  grid-row-start: second;
+}
+.Phone {
+  text-align: right;
+  grid-column-start: right;
+  grid-row-start: second;
+}
+
+.Description-Container {
+  grid-column-start: left;
+  grid-row-start: third;
+  grid-column-end: span 3;
+}
+
+.Description-Container p {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

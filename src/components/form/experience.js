@@ -9,7 +9,8 @@ class Experience extends Component {
 
   render() {
     const { updateExperience } = this.props;
-    const { id, position, company, city, from, to } = this.props.inputValues;
+    const { id, position, company, city, from, to, description } =
+      this.props.inputValues;
 
     return (
       <form data-id={id}>
@@ -43,6 +44,12 @@ class Experience extends Component {
           data-id='to'
           type='text'
           placeholder='To'></input>
+        <textarea
+          value={description}
+          onChange={updateExperience}
+          data-id='description'
+          type='text'
+          placeholder='Description'></textarea>
       </form>
     );
   }

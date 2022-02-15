@@ -1,0 +1,14 @@
+.Education-Container {
+  display: grid;
+  grid-template-columns: [left] 3fr [right] 1fr;
+  margin-bottom: 5px;
+}
+
+.Degree {
+  font-weight: bold;
+}
+
+.Date-Completed {
+  text-align: right;
+  font-style: italic;
+}
